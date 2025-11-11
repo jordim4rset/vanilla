@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PANTALLA 3</title>
+    <link rel="stylesheet" href="CSS/styles3.css">
+</head>
+<body>
+    <div id="preguntas">
+        <label for="pregunta">PREGUNTA</label>
+        <br>
+        <textarea name="pregunta" id="pregunta" name="pregunta"></textarea>
+        <br>
+        <label for="verdadero">Verdadero</label>
+        <input type="radio" name="respuesta" id="verdadero">
+        <label for="falso">Falso</label>
+        <input type="radio" name="respuesta" id="falso">
+        <br>
+        <label for="puntuacion">PUNTUACIÓN</label>
+        <br>
+        <input type="text" name="puntuacion" id="puntuacion">
+        <br>
+        <button id="btnAtras">Atrás</button>
+        <button id="btnGrabar">Grabar</button>
+    </div>
+    <div>
+        <p id="pregunta"></p>
+    </div>
+    <div>
+        <table id="tablaRespuestas">
+            <tr>
+                <th>Pregunta</th>
+                <th>Respuesta</th>
+                <th>Puntuación</th>
+                <th>Estado</th>
+            </tr>
+            <hr>
+
+        </table>
+    </div>
+
+
+    <script src="JS/script3.js"></script>
+</body>
+</html>
