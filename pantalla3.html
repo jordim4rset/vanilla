@@ -13,13 +13,14 @@
         <textarea name="pregunta" id="pregunta" name="pregunta"></textarea>
         <br>
         <label for="verdadero">Verdadero</label>
-        <input type="radio" name="respuesta" id="verdadero">
+        <input type="radio" name="respuesta" id="verdadero" value="true">
         <label for="falso">Falso</label>
-        <input type="radio" name="respuesta" id="falso">
+        <input type="radio" name="respuesta" id="falso" value="false">
         <br>
         <label for="puntuacion">PUNTUACIÓN</label>
         <br>
         <input type="text" name="puntuacion" id="puntuacion">
+        <p id="errorPuntuacion"></p>
         <br>
         <button id="btnAtras">Atrás</button>
         <button id="btnGrabar">Grabar</button>
@@ -29,14 +30,17 @@
     </div>
     <div>
         <table id="tablaRespuestas">
-            <tr>
-                <th>Pregunta</th>
-                <th>Respuesta</th>
-                <th>Puntuación</th>
-                <th>Estado</th>
-            </tr>
-            <hr>
+            <thead>
+                <tr>
+                    <th>Pregunta</th>
+                    <th>Respuesta</th>
+                    <th>Puntuación</th>
+                    <th>Estado</th>
+                </tr>
+            </thead>
+            <tbody>
 
+            </tbody>
         </table>
     </div>
 

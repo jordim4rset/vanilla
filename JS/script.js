@@ -1,7 +1,7 @@
 let pBienvenida = document.getElementById('bienvenida');
 let divUsuario = document.querySelectorAll('div.correo');
 let boton = document.getElementById('btnEnviar');
-let campoUsuario;
+let campoUsuario = document.getElementById('campoUsuario');
 let pError = document.getElementById('error');
 let correo;
 let fecha;
@@ -20,17 +20,14 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-function validarCorreo(correo){
-    return correo.includes('@');
+function validarCorreo() {
+    return campoUsuario.value.includes('@');
 }
 
+
 boton.addEventListener('click', () => {
-    campoUsuario = document.getElementById('campoUsuario').value;
-    console.log(campoUsuario);
-    console.log(validarCorreo(campoUsuario));
-    if(validarCorreo(campoUsuario)){
-        console.log('entra if');
-        correo = campoUsuario;
+    correo = campoUsuario.value;
+    if(validarCorreo(correo)){
         fecha = new Date();
         console.log(correo);
         console.log(fecha);
@@ -43,15 +40,15 @@ boton.addEventListener('click', () => {
     }
 });
 
-campoUsuario = document.getElementById('campoUsuario');
 campoUsuario.addEventListener('blur', () => {
-    campoUsuario = document.getElementById('campoUsuario').value;
-    if((campoUsuario.includes('@'))){
+    const valor = campoUsuario.value;
+    if (valor.includes('@')) {
         pError.innerHTML = '';
-    }else{
+    } else {
         pError.innerHTML = 'El correo debe contener @';
     }
 });
+
 
 setTimeout(() => {
 
