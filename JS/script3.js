@@ -7,10 +7,16 @@ let btnAtras = document.getElementById('btnAtras');
 let btnGrabar = document.getElementById('btnGrabar');
 let errorPuntuacion = document.getElementById('errorPuntuacion');
 let radioSeleccionado = document.querySelector('input[name="respuesta"]:checked');
+let pCargandoTabla = document.getElementById('cargando-tabla');
 errorPuntuacion.style.display = 'none';
 let respuestaVoF;
 
 
+tabla.style.display = 'none';
+setTimeout(() => {
+    pCargandoTabla.style.display = 'none';
+    tabla.style.display = 'block';
+}, 4000);
 
 //indicamos que solo pueda contener digitos del 1 al 9
 campoPuntuacion.addEventListener('blur', () => {
@@ -53,29 +59,34 @@ btnGrabar.addEventListener('click', () => {
         let pregunta = campoPregunta.value;
         let respuesta = respuestaVoF;
         let puntuacion = campoPuntuacion.value;
-        let estado = campoPuntuacion.value;
-        let fila = document.createElement('tr'); 
+        let estado = 'listo';
+        let fila = document.createElement('tr');
 
         let tdPregunta = document.createElement('td');
-        tdPregunta.textContent = nombre;
-        
+        tdPregunta.textContent = pregunta;
+
         let tdRespuesta = document.createElement('td');
-        tdRespuesta.textContent = edad;
-        
+        tdRespuesta.textContent = respuesta;
+
         let tdPuntuacion = document.createElement('td');
-        tdPuntuacion.textContent = pais;
-        
+        tdPuntuacion.textContent = puntuacion;
+
         let tdEstado = document.createElement('td');
-        tdEstado.textContent = pais
-        
+        tdEstado.textContent = 'cargando...';
+
         fila.appendChild(tdPregunta);
-        
+
         fila.appendChild(tdRespuesta);
-        
+
         fila.appendChild(tdPuntuacion);
-        
+
         fila.appendChild(tdEstado);
-        
+
+        setTimeout(() => {
+            tdEstado.textContent = estado;
+            fila.appendChild(tdEstado);
+        }, 4000);
+
         tabla.appendChild(fila);
 
     }

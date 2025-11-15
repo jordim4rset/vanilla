@@ -40,6 +40,7 @@ boton.addEventListener('click', () => {
     }
 });
 
+
 campoUsuario.addEventListener('blur', () => {
     const valor = campoUsuario.value;
     if (valor.includes('@')) {
